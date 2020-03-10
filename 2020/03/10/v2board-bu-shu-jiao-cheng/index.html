@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="Hello World, BGML">
+    <meta name="keywords" content="v2board部署教程, BGML">
     <meta name="description" content="">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -13,7 +13,7 @@
     <meta name="format-detection" content="telephone=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <title>Hello World | BGML</title>
+    <title>v2board部署教程 | BGML</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -304,12 +304,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/12.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/22.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">Hello World</h1>
+                    <h1 class="description center-align post-title">v2board部署教程</h1>
                 </div>
             </div>
         </div>
@@ -438,7 +438,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2020-03-06
+                    2020-03-10
                 </div>
                 
 
@@ -455,15 +455,77 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><pre class=" language-bash"><code class="language-bash">$ hexo new <span class="token string">"My New Post"</span></code></pre>
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><pre class=" language-bash"><code class="language-bash">$ hexo server</code></pre>
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><pre class=" language-bash"><code class="language-bash">$ hexo generate</code></pre>
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><pre class=" language-bash"><code class="language-bash">$ hexo deploy</code></pre>
-<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html" target="_blank" rel="noopener">Deployment</a></p>
+                <h2 id="环境要求"><a href="#环境要求" class="headerlink" title="环境要求"></a>环境要求</h2><p>这里我们推荐使用aaPanel作为环境搭建的入门首选，机器的内存最好是1G，512M是最低要求配置。</p>
+<p>本文教程是将 <strong>aaPanel</strong> 作为环境进行配置，部署机器由 <a href="https://www.moack.co.kr/dedicated.php" target="_blank" rel="noopener">Moack</a> 提供。</p>
+<h2 id="部署"><a href="#部署" class="headerlink" title="部署"></a>部署</h2><h3 id="1-配置aaPanel"><a href="#1-配置aaPanel" class="headerlink" title="1.配置aaPanel"></a>1.配置aaPanel</h3><p>你需要在 <a href="https://forum.aapanel.com/d/9-aapanel-linux-panel-6-5-4-installation-tutorial" target="_blank" rel="noopener">aaPanel</a> 选择你的系统获得安装方式。这里以 debian 作为系统环境进行安装。</p>
+<pre class=" language-shell"><code class="language-shell">wget -O install.sh http://www.aapanel.com/script/install-ubuntu_6.0_en.sh &amp;&amp; bash install.sh</code></pre>
+<p>安装完成后我们登陆 aaPanel 进行环境的安装。</p>
+<p>选择使用LNMP的环境安装方式勾选如下信息</p>
+<p>☑️ Nginx 1.17</p>
+<p>☑️ MySQL 5.6</p>
+<p>☑️ PHP 7.3</p>
+<p>以上环境版本号均为最低要求，选择 Fast 快速编译后进行安装。</p>
+<h3 id="2-安装Redis"><a href="#2-安装Redis" class="headerlink" title="2.安装Redis"></a>2.安装Redis</h3><p>aaPanel 面板 &gt; App Store &gt; 找到PHP 7.3点击Setting &gt; Install extentions &gt; redis 进行安装。</p>
+<h3 id="3-解除被禁止的函数"><a href="#3-解除被禁止的函数" class="headerlink" title="3.解除被禁止的函数"></a>3.解除被禁止的函数</h3><p>aaPanel 面板 &gt; App Store &gt; 找到PHP 7.3点击Setting &gt; Disabled functions 将 <code>putenv</code> <code>proc_open</code> <code>pcntl_alarm</code> <code>pcntl_signal</code>从列表中删除。</p>
+<h3 id="4-添加站点"><a href="#4-添加站点" class="headerlink" title="4.添加站点"></a>4.添加站点</h3><p>aaPanel 面板 &gt; Website &gt; Add site。</p>
+<pre><code>Domain：填入你指向服务器的域名
+Database：MySQL
+PHP version：PHP-73</code></pre><p>Submit 完成创建。</p>
+<p>完成创建后访问站点目录删除目录下的所有文件，.user.ini 文件需要在 aaPanel 下单独点击 Del 删除。</p>
+<p>添加完成后编辑添加的站点 &gt; Site directory &gt; Running directory 选择 /public 保存。</p>
+<p>添加完成后编辑添加的站点 &gt; URL rewrite 填入伪静态信息。</p>
+<pre class=" language-nginx"><code class="language-nginx"><span class="token keyword">location</span> <span class="token operator">/</span>downloads <span class="token punctuation">{</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">location</span> <span class="token operator">/</span> <span class="token punctuation">{</span>  
+    <span class="token keyword">try_files</span> <span class="token variable">$uri</span> <span class="token variable">$uri</span><span class="token operator">/</span> <span class="token operator">/</span><span class="token keyword">index</span><span class="token punctuation">.</span>php<span class="token variable">$is_args</span><span class="token variable">$query_string</span><span class="token punctuation">;</span>  
+<span class="token punctuation">}</span>
+
+<span class="token keyword">location</span> <span class="token operator">~</span> <span class="token punctuation">.</span><span class="token operator">*</span>\<span class="token punctuation">.</span><span class="token punctuation">(</span>js<span class="token operator">|</span>css<span class="token punctuation">)</span><span class="token operator">?</span>$
+<span class="token punctuation">{</span>
+    <span class="token keyword">expires</span>      1h<span class="token punctuation">;</span>
+    <span class="token keyword">error_log</span> off<span class="token punctuation">;</span>
+    <span class="token keyword">access_log</span> <span class="token operator">/</span>dev<span class="token operator">/</span>null<span class="token punctuation">;</span> 
+<span class="token punctuation">}</span></code></pre>
+<p>到此站点添加完成。</p>
+<h3 id="5-安装V2Board"><a href="#5-安装V2Board" class="headerlink" title="5.安装V2Board"></a>5.安装V2Board</h3><p>通过SSH登录到服务器后访问站点路径如：/www/wwwroot/domain.com。</p>
+<p>以下命令都需要在站点目录进行执行。</p>
+<p>执行命令从 Github 克隆到当前目录。</p>
+<pre class=" language-shell"><code class="language-shell"># 1.0.1 为当前 V2Board 版本号
+git clone -b 1.0.1 https://github.com/v2board/v2board.git ./</code></pre>
+<p>执行命令下载 composer.phar 到当前目录。</p>
+<pre class=" language-shell"><code class="language-shell">wget https://getcomposer.org/download/1.9.0/composer.phar</code></pre>
+<p>执行命令进行包安装。</p>
+<pre class=" language-shell"><code class="language-shell">php composer.phar install</code></pre>
+<p>安装过程中报错或者无法继续安装的请分配 swap，如何分配 swap 请查阅 google。</p>
+<p>复制.env.example文件为.env。</p>
+<pre class=" language-shell"><code class="language-shell"># domain.com 请更改为站点域名且路径必须存在
+cp .env.example .env</code></pre>
+<p>打开 .env 文件，修改数据库信息并保存。</p>
+<pre class=" language-shell"><code class="language-shell">DB_HOST=数据库地址
+DB_PORT=3306
+DB_DATABASE=数据库名
+DB_USERNAME=数据库用户名
+DB_PASSWORD=数据库密码</code></pre>
+<p>保存后请重新给予目录权限</p>
+<pre class=" language-shell"><code class="language-shell"># domain.com 请更改为站点域名且路径必须存在
+chown -R www ../domain.com</code></pre>
+<p>执行命令进行面板的安装。</p>
+<pre class=" language-shell"><code class="language-shell">php artisan v2board:install</code></pre>
+<p>输入管理员账号密码，至此一切就绪，可以访问你的面板了。</p>
+<h3 id="6-配置定时任务"><a href="#6-配置定时任务" class="headerlink" title="6.配置定时任务"></a>6.配置定时任务</h3><p>aaPanel 面板 &gt; Cron。</p>
+<pre class=" language-shell"><code class="language-shell"># domain.com 请更改为站点域名且路径必须存在
+
+Type of Task：Shell Script
+Name of Task：v2board
+Period：N Minutes 1 Minute
+Script content：php /www/wwwroot/domain.com/artisan schedule:run</code></pre>
+<p>根据上述信息添加每1分钟执行一次的定时任务。</p>
+<h3 id="7-启动队列服务"><a href="#7-启动队列服务" class="headerlink" title="7.启动队列服务"></a>7.启动队列服务</h3><p>队列服务将会应用在邮件发送等场景，请务必保证队列服务在后台运行正常。</p>
+<p>你可以使用 nohup 让其在后台运行，但是 nohup 无法保证队列服务不会退出。 使用 nohup 方式你需要在站点目录下执行如下命令：</p>
+<pre class=" language-shell"><code class="language-shell">nohup php artisan queue:work &gt; queue.log 2&gt;&amp;1 &amp;</code></pre>
+<p>如果你想让队列服务长期保持稳定的在后台运作，你需要使用第三方软件如 supervisor 的 buff 加持。</p>
+<p>如何使用 supervisor 在 google 你会得到想要的答案。</p>
 <script>
         document.querySelectorAll('.github-emoji')
           .forEach(el => {
@@ -507,7 +569,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://bgml.me/2020/03/06/hello-world/">https://bgml.me/2020/03/06/hello-world/</a>
+                    <a href="https://bgml.me/2020/03/10/v2board-bu-shu-jiao-cheng/">https://bgml.me/2020/03/10/v2board-bu-shu-jiao-cheng/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -708,9 +770,10 @@
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
             <div class="card">
                 <a href="/2020/03/10/v2board-bu-shu-jiao-cheng/">
                     <div class="card-image">
@@ -730,9 +793,9 @@
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2020-03-10
-                        </span>
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2020-03-10
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-user fa-fw"></i>
@@ -741,6 +804,7 @@
                         </span>
                     </div>
                 </div>
+
                 
             </div>
         </div>
@@ -748,7 +812,7 @@
         
         <div class="article col s12 m6" data-aos="fade-up">
             <div class="article-badge right-badge text-color">
-                本篇&nbsp;<i class="far fa-dot-circle"></i>
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
                 <a href="/2020/03/06/hello-world/">
@@ -778,7 +842,6 @@
                         </span>
                     </div>
                 </div>
-
                 
             </div>
         </div>
