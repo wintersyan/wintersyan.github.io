@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://bgml.me/"/>
-  <updated>2020-03-10T14:46:30.309Z</updated>
+  <updated>2020-05-05T20:05:48.555Z</updated>
   <id>https://bgml.me/</id>
   
   <author>
@@ -15,6 +15,75 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>让你们都拥有自己Apple_Id绑定的官方下架iPA_Cross实践</title>
+    <link href="https://bgml.me/2020/05/06/rang-ni-men-du-yong-you-zi-ji-apple-id-bang-ding-de-guan-fang-xia-jia-ipa-cross-shi-jian/"/>
+    <id>https://bgml.me/2020/05/06/rang-ni-men-du-yong-you-zi-ji-apple-id-bang-ding-de-guan-fang-xia-jia-ipa-cross-shi-jian/</id>
+    <published>2020-05-05T19:43:31.088Z</published>
+    <updated>2020-05-05T20:05:48.555Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h2 id=&quot;让你们都拥有自己Apple-Id绑定的官方下架iPA-Cross实践&quot;&gt;&lt;a href=&quot;#让你们都拥有自己Apple-Id绑定的官方下架iPA-Cross实践&quot; class=&quot;headerlink&quot; title=&quot;让你们都拥有自己Apple
+        
+      
+    
+    </summary>
+    
+    
+    
+  </entry>
+  
+  <entry>
+    <title>V2rayNG</title>
+    <link href="https://bgml.me/2020/05/06/v2rayng/"/>
+    <id>https://bgml.me/2020/05/06/v2rayng/</id>
+    <published>2020-05-05T19:43:31.083Z</published>
+    <updated>2020-05-05T18:38:49.048Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h2 id=&quot;应用概述&quot;&gt;&lt;a href=&quot;#应用概述&quot; class=&quot;headerlink&quot; title=&quot;应用概述&quot;&gt;&lt;/a&gt;应用概述&lt;/h2&gt;&lt;p&gt;V2rayNG 是在 Android 平台上的客户端软件，支持 VMess 及 Shadowsocks
+        
+      
+    
+    </summary>
+    
+    
+    
+  </entry>
+  
+  <entry>
+    <title>sspanel3  后端全自动一键脚本  配置教程</title>
+    <link href="https://bgml.me/2020/05/06/sspanel3-hou-duan-quan-zi-dong-yi-jian-jiao-ben-pei-zhi-jiao-cheng/"/>
+    <id>https://bgml.me/2020/05/06/sspanel3-hou-duan-quan-zi-dong-yi-jian-jiao-ben-pei-zhi-jiao-cheng/</id>
+    <published>2020-05-05T19:43:31.067Z</published>
+    <updated>2020-05-05T18:38:48.378Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h4 id=&quot;第一步，在-app-Controllers-Mod-Mu-添加代码：&quot;&gt;&lt;a href=&quot;#第一步，在-app-Controllers-Mod-Mu-添加代码：&quot; class=&quot;headerlink&quot; title=&quot;第一步，在
+        
+      
+    
+    </summary>
+    
+    
+    
+  </entry>
   
   <entry>
     <title>V2Board部署教程</title>
